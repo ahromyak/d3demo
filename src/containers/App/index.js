@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home'
 
-class App extends Component {
+class App extends React.Component {
     render() {
 
         return (
