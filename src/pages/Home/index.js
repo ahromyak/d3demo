@@ -1,4 +1,5 @@
 import React from 'react';
+import ferrari from '../../assets/ferrari.jpeg'
 
 class Home extends React.Component {
     render() {
@@ -6,6 +7,7 @@ class Home extends React.Component {
         return (
             <div>
                 Home
+                <img src={ferrari}/>
             </div>
         );
     }

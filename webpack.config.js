@@ -8,7 +8,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const IS_DEV = (process.env.NODE_ENV === 'dev');
 
 const copyPlugin = new CopyWebpackPlugin([{
-    from: './src/assets', to: 'dest'
+    from: './src/assets', to: 'dist'
 }],{});
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -52,14 +52,23 @@ const defaultSettings = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true,
+                        },
+                    },
+                ],
             }
         ]
     },
-    plugins: [definePlugin, htmlPlugin]
+    plugins: [definePlugin, htmlPlugin, copyPlugin]
 };
-
-// console.log(process.env.NODE_ENV,'process.env.NODE_ENV');
-// const modeSettings = process.env.NODE_ENV === 'development' ? devMode : prodMode;
 
 module.exports = Object.assign(
     {},
