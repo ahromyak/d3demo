@@ -3,6 +3,8 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home'
 import ReduxExample from '../../pages/ReduxExample'
 
+import './styles.css'
+
 class App extends React.Component {
     render() {
 
