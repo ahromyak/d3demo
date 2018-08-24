@@ -1,11 +1,11 @@
 import React from 'react';
 
 function FirstComponent(props){
-    return (<div>hello1  - {props.text}</div>)
+    return (<div>this is intro view  - {props.text}</div>)
 }
 
 function SecondComponent(props){
-    return (<div>hello2 - {props.text}</div>)
+    return (<div>this is form view - {props.text}</div>)
 }
 
 function ThirdComponent(props){

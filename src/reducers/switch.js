@@ -1,12 +1,16 @@
-const switchview = (state = [], action) => {
+const INITIAL_STATE = {
+    eligibilityStatus: 'incomplete',
+    switchtype: 'INTRO'
+}
+
+
+const switchview = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'SWITCH_VIEW':
-            return [
+            return {
                 ...state,
-                {
-                    switchtype: action.payload,
-                }
-            ]
+                switchtype: action.payload,
+            }
         default:
             return state
     }

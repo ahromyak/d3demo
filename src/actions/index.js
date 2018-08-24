@@ -15,7 +15,7 @@ export const toggleTodo = id => ({
     id
 })
 
-export const switchView = type => ({
+export const switchToView = type => ({
     type: 'SWITCH_VIEW',
     payload: type
 })
