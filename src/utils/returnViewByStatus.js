@@ -3,9 +3,6 @@ const returnViewByStatus = (key) => {
         case "incomplete": {
             return 'INTRO'
         }
-        // case "incomplete": {
-        // 	return 'FORMSVIEW'
-        // }
         case "pending": {
             return 'PENDING'
         }

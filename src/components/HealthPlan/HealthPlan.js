@@ -3,24 +3,37 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {parse} from 'query-string';
 
-// const eligibilityStatus = 'incomplete';
-import returnViewByStatus from '../../utils/returnViewByStatus';
 import healthPlanViewsCollection from '../../utils/viewCollection';
+import returnViewByStatus from '../../utils/returnViewByStatus';
 import {switchToView} from '../../actions/index'
 
 class HealthPlan extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // subComponent: returnViewByStatus(props.eligibilityStatus)
         };
     }
 
     componentWillMount() {
-        const shoulwSkippIntro = parse(this.props.location.search);
-        if (shoulwSkippIntro.skipIntro) {
+
+        if (this.checkIfIntroShouldBeSkipped()) {
+            this.props.switchToView('FORMSVIEW');
+        }else{
+            const whatToShow = returnViewByStatus(this.props.eligibilityStatus);
+            this.props.switchToView(whatToShow);
+        }
+    }
+
+    componentDidUpdate(){
+        if (this.checkIfIntroShouldBeSkipped()) {
             this.props.switchToView('FORMSVIEW');
         }
+        console.log('ooooo')
+    }
+
+    checkIfIntroShouldBeSkipped(){
+        const shoulwSkippIntro = parse(this.props.location.search);
+        return shoulwSkippIntro.skipIntro;
     }
 
     renderSubComponent() {
