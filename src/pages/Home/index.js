@@ -1,13 +1,12 @@
 import React from 'react';
-import ferrari from '../../assets/ferrari.jpeg'
+import { Link, Route, Switch } from 'react-router-dom';
 
 class Home extends React.Component {
     render() {
-
         return (
             <div>
-                Home
-                <img src={ferrari}/>
+                Coaching Program
+                <Link to={'/reduxexample/health-plan?skipIntro=true'}>Go with skip</Link>
             </div>
         );
     }

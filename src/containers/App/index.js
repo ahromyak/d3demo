@@ -10,12 +10,16 @@ class App extends React.Component {
 
         return (
             <div>
-                <nav className="navbar navbar-light">
-                    <ul className="nav navbar-nav">
-                        <li><Link to="/">Homes</Link></li>
-                        <li><Link to="/reduxexample">Category</Link></li>
-                        <li><Link to="/products">Products</Link></li>
-                    </ul>
+                <nav className="navbar navbar-default">
+                    <div className="container-fluid">
+                        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul className="nav navbar-nav">
+                                <li><Link to="/">Homes</Link></li>
+                                <li><Link to="/reduxexample">profile</Link></li>
+                                <li><Link to="/products">coaching</Link></li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
 
                 <Switch>

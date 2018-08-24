@@ -15,6 +15,11 @@ export const toggleTodo = id => ({
     id
 })
 
+export const switchView = type => ({
+    type: 'SWITCH_VIEW',
+    payload: type
+})
+
 export const VisibilityFilters = {
     SHOW_ALL: 'SHOW_ALL',
     SHOW_COMPLETED: 'SHOW_COMPLETED',

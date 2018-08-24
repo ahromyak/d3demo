@@ -1,7 +1,8 @@
 import React from 'react';
-import Footer from '../../components/demo/Footer'
-import AddTodo from '../../containers/AddTodo'
-import VisibleTodoList from '../../containers/VisibleTodoList'
+import { Link, Route, Switch } from 'react-router-dom';
+
+// Components
+import HealthPlan from '../../components/HealthPlan/HealthPlan'
 
 class ReduxExample extends React.Component {
     render() {
@@ -9,10 +10,10 @@ class ReduxExample extends React.Component {
         return (
             <div>
                 ReduxExample
-
-                <AddTodo />
-                <VisibleTodoList />
-                <Footer />
+                <Link to={'/reduxexample/health-plan'}>Health plan</Link>
+                <Switch>
+                    <Route path={'/reduxexample/health-plan'} component={HealthPlan}/>
+                </Switch>
             </div>
         );
     }
